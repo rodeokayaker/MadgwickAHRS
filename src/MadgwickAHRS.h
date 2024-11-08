@@ -76,26 +76,26 @@ public:
         if (!anglesComputed) computeAngles();
         return yaw;
     }
-    void getQuaternion(float *q) {
+    inline void getQuaternion(float *q) {
         q[0] = q0;
         q[1] = q1;
         q[2] = q2;
         q[3] = q3;
     }
 
-    Quaternion getQuaternion() {
+    inline Quaternion getQuaternion() {
         return {q0, q1, q2, q3};
     }
 
-    void getQuaternion(Quaternion *q) {
+    inline void getQuaternion(Quaternion *q) {
         q->q0 = q0;
         q->q1 = q1;
         q->q2 = q2;
         q->q3 = q3;
     }
 
-    float getBeta() { return beta; }
-    void setBeta(float b) { beta = b; }
+    inline float getBeta() { return beta; }
+    inline void setBeta(float b) { beta = b; }
 
 };
 #endif
