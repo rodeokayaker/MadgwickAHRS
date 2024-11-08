@@ -18,6 +18,13 @@
 #define MadgwickAHRS_h
 #include <math.h>
 
+struct Quaternion {
+    float q0;
+    float q1;
+    float q2;
+    float q3;
+};
+
 //--------------------------------------------------------------------------------------------
 // Variable declaration
 class Madgwick{
@@ -69,6 +76,27 @@ public:
         if (!anglesComputed) computeAngles();
         return yaw;
     }
+    void getQuaternion(float *q) {
+        q[0] = q0;
+        q[1] = q1;
+        q[2] = q2;
+        q[3] = q3;
+    }
+
+    Quaternion getQuaternion() {
+        return {q0, q1, q2, q3};
+    }
+
+    void getQuaternion(Quaternion *q) {
+        q->q0 = q0;
+        q->q1 = q1;
+        q->q2 = q2;
+        q->q3 = q3;
+    }
+
+    float getBeta() { return beta; }
+    void setBeta(float b) { beta = b; }
+
 };
 #endif
 
