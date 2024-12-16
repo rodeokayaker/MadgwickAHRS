@@ -18,7 +18,7 @@
 #define MadgwickAHRS_h
 #include <math.h>
 
-struct Quaternion {
+struct AHRSQuaternion {
     float q0;
     float q1;
     float q2;
@@ -83,11 +83,11 @@ public:
         q[3] = q3;
     }
 
-    inline Quaternion getQuaternion() {
+    inline AHRSQuaternion getQuaternion() {
         return {q0, q1, q2, q3};
     }
 
-    inline void getQuaternion(Quaternion *q) {
+    inline void getQuaternion(AHRSQuaternion *q) {
         q->q0 = q0;
         q->q1 = q1;
         q->q2 = q2;
